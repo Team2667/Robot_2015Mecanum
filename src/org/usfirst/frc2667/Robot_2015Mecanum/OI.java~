@@ -62,9 +62,9 @@ public class OI {
 
         joystick = new Joystick(0);
         
-        joystickButton2 = new JoystickButton(joystick, 3);
+        joystickButton2 = new JoystickButton(joystick, 8);
         joystickButton2.whileHeld(new ElevatorDown());
-        joystickButton1 = new JoystickButton(joystick, 4);
+        joystickButton1 = new JoystickButton(joystick, 6);
         joystickButton1.whileHeld(new ElevatorUp());
 
 	    

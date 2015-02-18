@@ -57,8 +57,18 @@ public class Drivetrain extends Subsystem {
     	robotDrive41.mecanumDrive_Cartesian(0,0,0, 0);
     }
     
+    // Tank drive does not work for a mcanumDrive. Need to use
+    // mecanumDrive Cartesian. Need to use a - value for the y parameter
+    // to make the robot drive forward.
+    // using the gryro angle make sthe robot try to spin to align itself with a certain direction
+    // depending how you position the robot.
     public void driveStraight(){
-    	robotDrive41.mecanumDrive_Cartesian(0, .5, 0, gyro1.getAngle());
+    	robotDrive41.mecanumDrive_Cartesian(0, -.5, 0, 0);
+ //   	robotDrive41.tankDrive(.5, .5);
+    }
+    
+    public void turn180(){
+    	robotDrive41.tankDrive(.5, .5);
     }
 }
 
