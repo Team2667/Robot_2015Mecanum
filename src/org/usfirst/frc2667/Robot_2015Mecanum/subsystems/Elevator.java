@@ -12,9 +12,8 @@
 package org.usfirst.frc2667.Robot_2015Mecanum.subsystems;
 
 import org.usfirst.frc2667.Robot_2015Mecanum.RobotMap;
-import org.usfirst.frc2667.Robot_2015Mecanum.commands.*;
-import edu.wpi.first.wpilibj.*;
 
+import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 

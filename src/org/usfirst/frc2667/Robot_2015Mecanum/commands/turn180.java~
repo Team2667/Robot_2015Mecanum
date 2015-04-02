@@ -11,10 +11,9 @@
 
 package org.usfirst.frc2667.Robot_2015Mecanum.commands;
 
-import edu.wpi.first.wpilibj.command.Command;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-
 import org.usfirst.frc2667.Robot_2015Mecanum.Robot;
+
+import edu.wpi.first.wpilibj.command.Command;
 
 /**
  *
@@ -37,17 +36,17 @@ public class turn180 extends Command {
     protected void initialize() {
     	// The inital angle
     	initialAngle = Robot.drivetrain.getGyro().getAngle();
-     	Robot.drivetrain.mecanumDrive(0, 0, 0.6, Robot.drivetrain.getGyro().getAngle());
+     	
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-
+    	Robot.drivetrain.mecanumDrive(0, 0, 0.6, Robot.drivetrain.getGyro().getAngle());
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return getAngleDiff() > 180;
+        return getAngleDiff() > 170;
     }
     
     public double getAngleDiff() {

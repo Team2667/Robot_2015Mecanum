@@ -21,7 +21,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  */
 public class  DriveToStart extends Command {
 	private long startTime;
-	private double delay = 30;
+	private double delay = 33;
 	public DriveToStart() {
 		// Use requires() here to declare subsystem dependencies
 		// eg. requires(chassis);
@@ -37,9 +37,6 @@ public class  DriveToStart extends Command {
 	protected void initialize() {
 		startTime = System.currentTimeMillis();
 		Robot.drivetrain.driveStraight(0.7);
-		SmartDashboard.putNumber("autonomous timer", delay);
-		delay = SmartDashboard.getNumber("autonomous timer");
-		
 	}
 
 	// Called repeatedly when this Command is scheduled to run

@@ -11,9 +11,9 @@
 
 package org.usfirst.frc2667.Robot_2015Mecanum.commands;
 
-import edu.wpi.first.wpilibj.command.Command;
-
 import org.usfirst.frc2667.Robot_2015Mecanum.Robot;
+
+import edu.wpi.first.wpilibj.command.Command;
 
 /**
  * This command lowers the elevator for 2 second
@@ -21,7 +21,6 @@ import org.usfirst.frc2667.Robot_2015Mecanum.Robot;
 public class  LowerElevatorSlightly extends Command {
 
 	private long startTime;
-	private int duration = 2;
 	
     public LowerElevatorSlightly() {
         // Use requires() here to declare subsystem dependencies
