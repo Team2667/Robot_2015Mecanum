@@ -19,7 +19,6 @@ import org.usfirst.frc2667.Robot_2015Mecanum.commands.ElevatorUp;
 import org.usfirst.frc2667.Robot_2015Mecanum.commands.ElevatorUpAuto;
 import org.usfirst.frc2667.Robot_2015Mecanum.commands.LowerElevatorSlightly;
 import org.usfirst.frc2667.Robot_2015Mecanum.commands.MecanumAutonomous;
-import org.usfirst.frc2667.Robot_2015Mecanum.commands.StopDriveTrain;
 import org.usfirst.frc2667.Robot_2015Mecanum.commands.TurnAround;
 
 import edu.wpi.first.wpilibj.Joystick;
@@ -90,8 +89,6 @@ public class OI {
         SmartDashboard.putData("ElevatorUp", new ElevatorUp());
 
         SmartDashboard.putData("ElevatorDown", new ElevatorDown());
-
-        SmartDashboard.putData("StopDriveTrain", new StopDriveTrain());
 
         SmartDashboard.putData("DriveToStart", new DriveToStart());
 
