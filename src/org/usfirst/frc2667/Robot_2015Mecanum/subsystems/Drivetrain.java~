@@ -47,10 +47,18 @@ public class Drivetrain extends Subsystem {
         //setDefaultCommand(new MySpecialCommand());
     }
     
+    public void setMaxOutput(double maxOutput) {
+    	this.robotDrive41.setMaxOutput(maxOutput);
+    }
+    
     public void mecanumDrive(Joystick joystick){
     	//robotDrive41.mecanumDrive_Cartesian(Robot.oi.joystick.getX(), Robot.oi.joystick.getY(), Robot.oi.joystick.getZ(), gyro1.getAngle());
     	robotDrive41.mecanumDrive_Cartesian(Robot.oi.joystick.getX(), Robot.oi.joystick.getY(), Robot.oi.joystick.getZ(), 0);
 
+    }
+    
+    public void mecanumDrive(double x, double y, double rotation, double gyro) {
+    	robotDrive41.mecanumDrive_Cartesian(x, y, rotation, gyro);
     }
     
     public void stop(){
@@ -62,13 +70,17 @@ public class Drivetrain extends Subsystem {
     // to make the robot drive forward.
     // using the gryro angle make sthe robot try to spin to align itself with a certain direction
     // depending how you position the robot.
-    public void driveStraight(){
-    	robotDrive41.mecanumDrive_Cartesian(0, -.5, 0, 0);
+    public void driveStraight(double speed){
+    	robotDrive41.mecanumDrive_Cartesian(0, speed, 0, 0);
  //   	robotDrive41.tankDrive(.5, .5);
     }
     
     public void turn180(){
     	robotDrive41.tankDrive(.5, .5);
+    }
+    
+    public Gyro getGyro() {
+    	return gyro1;
     }
 }
 

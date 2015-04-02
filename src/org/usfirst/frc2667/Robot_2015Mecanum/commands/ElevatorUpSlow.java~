@@ -11,16 +11,15 @@
 
 package org.usfirst.frc2667.Robot_2015Mecanum.commands;
 
-import org.usfirst.frc2667.Robot_2015Mecanum.Robot;
-
 import edu.wpi.first.wpilibj.command.Command;
+import org.usfirst.frc2667.Robot_2015Mecanum.Robot;
 
 /**
  *
  */
-public class  ElevatorDown extends Command {
+public class  ElevatorUpSlow extends Command {
 
-    public ElevatorDown() {
+    public ElevatorUpSlow() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
 
@@ -32,7 +31,7 @@ public class  ElevatorDown extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	Robot.elevator.set(-0.4);
+    	Robot.elevator.set(0.2);
     }
 
     // Called repeatedly when this Command is scheduled to run

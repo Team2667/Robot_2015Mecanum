@@ -11,16 +11,19 @@
 
 package org.usfirst.frc2667.Robot_2015Mecanum.commands;
 
-import org.usfirst.frc2667.Robot_2015Mecanum.Robot;
-
 import edu.wpi.first.wpilibj.command.Command;
 
-/**
- *
- */
-public class  ElevatorDown extends Command {
+import org.usfirst.frc2667.Robot_2015Mecanum.Robot;
 
-    public ElevatorDown() {
+/**
+ * This command lowers the elevator for 2 second
+ */
+public class  LowerElevatorSlightly extends Command {
+
+	private long startTime;
+	private int duration = 2;
+	
+    public LowerElevatorSlightly() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
 
@@ -32,6 +35,7 @@ public class  ElevatorDown extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
+    	startTime = System.currentTimeMillis();
     	Robot.elevator.set(-0.4);
     }
 
@@ -41,12 +45,12 @@ public class  ElevatorDown extends Command {
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return false;
+    	return (System.currentTimeMillis() - startTime) > 200L;
     }
 
     // Called once after isFinished returns true
     protected void end() {
-    	Robot.elevator.set(0.0);
+    	Robot.elevator.set(0);
     }
 
     // Called when another command which requires one or more of the same
