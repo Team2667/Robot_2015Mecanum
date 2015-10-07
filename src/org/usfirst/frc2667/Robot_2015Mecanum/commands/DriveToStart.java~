@@ -14,13 +14,15 @@ package org.usfirst.frc2667.Robot_2015Mecanum.commands;
 import org.usfirst.frc2667.Robot_2015Mecanum.Robot;
 
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
  *
  */
 public class  DriveToStart extends Command {
 	private long startTime;
-	private double delay = 33;
+	private double delay;
+	
 	public DriveToStart() {
 		// Use requires() here to declare subsystem dependencies
 		// eg. requires(chassis);
@@ -34,13 +36,18 @@ public class  DriveToStart extends Command {
 
 	// Called just before this Command runs the first time
 	protected void initialize() {
+		delay = 29;
 		startTime = System.currentTimeMillis();
 		Robot.drivetrain.driveStraight(0.7);
+		if (Robot.drivetrain.getVoltage() > 3) {
+			delay = 20; // TODO: If the switch is enabled change the duration
+		}
+		SmartDashboard.putNumber("inital voltage", Robot.drivetrain.getVoltage());
 	}
 
 	// Called repeatedly when this Command is scheduled to run
 	protected void execute() {
-		
+		SmartDashboard.putNumber("voltage", Robot.drivetrain.getVoltage());
 	}
 
 	// Make this return true when this Command no longer needs to run execute()
